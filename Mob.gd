@@ -1,8 +1,8 @@
 extends CharacterBody3D
 
-# Minimum speed of the mob in meters per second.
+# Minimum speed of the mob (m/s)
 @export var min_speed = 10
-# Maximum speed of the mob in meters per second.
+# Maximum speed of the mob (m/s)
 @export var max_speed = 18
 
 
@@ -25,4 +25,5 @@ func intitialize(start_position, player_position):
 
 
 func _on_visible_on_screen_notifier_3d_screen_exited():
-	pass # Replace with function body.
+	queue_free()
+	
