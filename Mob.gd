@@ -9,7 +9,7 @@ extends CharacterBody3D
 func _physics_process(_delta):
 	move_and_slide()
 
-func intitialize(start_position, player_position):
+func inititialize(start_position, player_position):
 	# Position mob at start position
 	look_at_from_position(start_position, player_position, Vector3.UP)
 	# Rotates the mob in a random direction so it does not face the player directly
