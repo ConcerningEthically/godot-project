@@ -9,7 +9,7 @@ extends CharacterBody3D
 func _physics_process(_delta):
 	move_and_slide()
 
-func inititialize(start_position, player_position):
+func initialize(start_position, player_position):
 	# Position mob at start position
 	look_at_from_position(start_position, player_position, Vector3.UP)
 	# Rotates the mob in a random direction so it does not face the player directly
@@ -21,8 +21,6 @@ func inititialize(start_position, player_position):
 	velocity = Vector3.FORWARD * random_speed
 	# Rotate the velocity vector based on the mob's Y rotation
 	velocity = velocity.rotated(Vector3.UP, rotation.y) 
-	
-
 
 func _on_visible_on_screen_notifier_3d_screen_exited():
 	queue_free()

@@ -1,6 +1,7 @@
 res://default_env.tres
-res://main.tscn
-res://main.gd
 res://player.tscn
-res://mob.tscn
+res://main.gd
+res://Mob.gd
 res://player.gd
+res://main.tscn
+res://mob.tscn
