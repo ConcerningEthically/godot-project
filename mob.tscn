@@ -10,6 +10,8 @@ size = Vector3(2, 1, 2)
 collision_layer = 2
 collision_mask = 0
 script = ExtResource("1_kgddh")
+min_speed = null
+max_speed = null
 
 [node name="Pivot" type="Node3D" parent="."]
 

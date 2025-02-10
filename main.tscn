@@ -66,9 +66,6 @@ shadow_enabled = true
 
 [node name="Player" parent="." instance=ExtResource("1_kh7vp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 15)
-speed = 14
-fall_acceleration = 100
-jump_impulse = 20
 
 [node name="CameraPivot" type="Marker3D" parent="."]
 
@@ -109,4 +106,5 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -24, 0
 wait_time = 0.5
 autostart = true
 
+[connection signal="hit" from="Player" to="." method="_on_player_hit"]
 [connection signal="timeout" from="MobTimer" to="." method="_on_timer_timeout"]

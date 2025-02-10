@@ -18,3 +18,8 @@ func _on_timer_timeout():
 	
 	#spawn the mob
 	add_child(mob)
+
+# When the player is hit by a mob
+func _on_player_hit():
+	$MobTimer.stop()
+

@@ -9,6 +9,8 @@ extends CharacterBody3D
 # Vertical impulse on player when bouncing over mob
 @export var bounce_impulse = 16
 
+signal hit
+
 
 var target_velocity = Vector3.ZERO
 
@@ -55,17 +57,23 @@ func _physics_process(delta):
 		if collision.get_collider() == null:
 			continue
 		
+		#if the player collides with mobs
 		if collision.get_collider().is_in_group("mob"):
 			var mob = collision.get_collider()
 			
 			if Vector3.UP.dot(collision.get_normal()) > 0.1:
 				#if so squash the mob
-				#mob.squash()
+				mob.squash()
 				#and bounce
 				target_velocity.y = bounce_impulse
 				# Prevent duplicate signals
 				break
-		
-		
-	
-	
+
+# Die function 
+func die():
+	hit.emit()
+	queue_free()
+
+# When a mob touches the cylinder
+func _on_mob_detector_body_entered(body):
+	die()
