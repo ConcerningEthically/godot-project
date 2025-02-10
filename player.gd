@@ -42,12 +42,7 @@ func _physics_process(delta):
 	#jumping
 	if is_on_floor() and Input.is_action_just_pressed("jump"):
 		target_velocity.y = jump_impulse
-	
-	
-	#moving the character
-	velocity = target_velocity
-	move_and_slide()
-	
+
 	# Iterate all collisions within the frame
 	for index in range(get_slide_collision_count()):
 		# Get one of the collisions with the player
@@ -68,6 +63,10 @@ func _physics_process(delta):
 				target_velocity.y = bounce_impulse
 				# Prevent duplicate signals
 				break
+
+	#moving the character
+	velocity = target_velocity
+	move_and_slide()
 
 # Die function 
 func die():

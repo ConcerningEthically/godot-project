@@ -10,14 +10,13 @@ size = Vector3(2, 1, 2)
 collision_layer = 2
 collision_mask = 0
 script = ExtResource("1_kgddh")
-min_speed = null
-max_speed = null
 
 [node name="Pivot" type="Node3D" parent="."]
 
 [node name="Character" parent="Pivot" instance=ExtResource("2_p1sbp")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1.2, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("BoxShape3D_t1tms")
 
 [node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="."]

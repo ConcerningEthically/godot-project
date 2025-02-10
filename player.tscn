@@ -8,6 +8,7 @@
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_opppf"]
 
 [node name="Player" type="CharacterBody3D"]
+transform = Transform3D(1.01345, 0, 0, 0, 1.01345, 0, 0, 0, 1.01345, 0, 0, 0)
 collision_mask = 6
 script = ExtResource("1_wp8fv")
 
@@ -16,16 +17,17 @@ script = ExtResource("1_wp8fv")
 [node name="Character" parent="Pivot" instance=ExtResource("1_qm4pj")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(2.11575, 0, 0, 0, 2.11575, 0, 0, 0, 2.11575, 0, 0, 0)
+transform = Transform3D(2.11575, 0, 0, 0, 1.53442, 0, 0, 0, 2.11575, 0, 0, 0)
 shape = SubResource("SphereShape3D_50lgo")
 
 [node name="MobDetector" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0812006, 0)
 collision_layer = 0
 collision_mask = 2
 monitorable = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MobDetector"]
-transform = Transform3D(1.81791, 0, 0, 0, 0.17056, 0, 0, 0, 1.81791, 0, 0.600885, 0)
+transform = Transform3D(2.716, 0, 0, 0, 0.566428, 0, 0, 0, 2.716, 0, 0.437868, 0)
 shape = SubResource("CylinderShape3D_opppf")
 
 [connection signal="body_entered" from="MobDetector" to="." method="_on_mob_detector_body_entered"]

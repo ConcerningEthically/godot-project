@@ -4,3 +4,6 @@ res://main.gd
 res://Mob.gd
 res://player.tscn
 res://mob.tscn
+res://player.gd
+res://ScoreLabel.gd
+res://bgm.tscn

@@ -11,7 +11,7 @@ signal squashed
 func _physics_process(_delta):
 	move_and_slide()
 
-func initialize(start_position, player_position):
+func init(start_position, player_position):
 	# Position mob at start position
 	look_at_from_position(start_position, player_position, Vector3.UP)
 	# Rotates the mob in a random direction so it does not face the player directly
@@ -31,4 +31,6 @@ func squash():
 	squashed.emit()
 	queue_free()
 
-func _on_player_hit
+func _on_player_hit():
+	$MobTimer.stop
+	
