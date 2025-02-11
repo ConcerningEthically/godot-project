@@ -29,8 +29,17 @@ func _physics_process(delta):
 		direction.z += 1
 	if direction != Vector3.ZERO:
 		direction = direction.normalized()
-		$Pivot.basis.looking_at(direction)
+		$Pivot.basis = Basis.looking_at(direction)
 		
+		# Animation when jumping
+		$AnimationPlayer.speed_scale = 4
+	else:
+		# Animation slow 
+		$AnimationPlayer.speed_scale = 2
+	
+	$Pivot.rotation.x = PI / 6 * velocity.y / jump_impulse 
+	
+	
 	#ground velocity
 	target_velocity.x = direction.x * speed
 	target_velocity.z = direction.z * speed
@@ -76,3 +85,5 @@ func die():
 # When a mob touches the cylinder
 func _on_mob_detector_body_entered(body):
 	die()
+
+
